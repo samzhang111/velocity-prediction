@@ -7,7 +7,7 @@ stories['updated_at'] = pd.to_datetime(stories['updated_at'])
 
 stories.sort('created_at', inplace=True)
 stories['estimate'].fillna(0, inplace=True)
-stories_without_nans = stories.dropna()
+stories_without_nans = stories.dropna(subset=['accepted_at'])
 
 # Calculate week buckets
 def get_week_num_from_date(date):
